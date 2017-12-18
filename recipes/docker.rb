@@ -14,7 +14,13 @@ template '/usr/lib/systemd/system/docker.socket' do
   notifies :restart, 'service[docker]', :delayed
 end
 
+source_template = if node['kubernetes_cluster']['package']['docker']['name'] == 'docker-ce'
+                    'docker-ce.service.erb'
+                  else
+                    'docker.service.erb'
+                  end
 template '/usr/lib/systemd/system/docker.service' do
+  source source_template
   owner 'root'
   group 'root'
   mode '0600'
