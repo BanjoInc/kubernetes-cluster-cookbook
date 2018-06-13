@@ -1,7 +1,7 @@
 FROM weiwu1120/rpm-builder:v0.1
 MAINTAINER wei <weiwu1120@gmail.com>
 
-ARG K8S_VERSION=v1.8.2
+ARG K8S_VERSION=v1.8.11
 ARG K8S_ITERATION=1
 
 RUN wget https://dl.k8s.io/$K8S_VERSION/kubernetes-server-linux-amd64.tar.gz && \

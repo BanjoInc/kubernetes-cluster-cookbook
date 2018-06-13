@@ -94,6 +94,7 @@ default['kubernetes_cluster']['log']['level'] = '5'
 # Package versions
 default['kubernetes_cluster']['package'].tap do |package|
   package['flannel']['version'] = '>= 0.2.0'
+  package['flannel']['tar_version'] = nil
   package['docker']['name'] = 'docker'
   package['docker']['version'] = '= 1.8.2'
   package['kubernetes_master']['version'] = '= 1.0.3'
